@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>About Us | FixMaster Pro - Trust & Excellence</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root{
+  --navy:#0b1c2d;
+  --black:#000;
+  --yellow:#d4af37;
+  --light:#f5f5f5;
+  --dark-grey: #1a2a3a;
+  --accent-blue: #081420;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--navy);
+  color:var(--light);
+  line-height:1.6;
+}
+.container{width:90%;max-width:1200px;margin:auto}
+a{text-decoration:none;color:inherit}
+
+/* HEADER & NAVIGATION */
+header {
+  background: var(--navy);
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  position: relative;
+}
+
+/* LOGO */
+.logo { display: flex; align-items: center; }
+.logo img {
+  height: 90px; 
+  width: auto;
+  object-fit: contain;
+  transition: .3s;
+}
+.logo img:hover { transform: scale(1.5); }
+
+/* DESKTOP NAV */
+nav { display: flex; align-items: center; }
+nav a {
+  margin-left: 30px;
+  color: #fff;
+  font-weight: bold;
+  white-space: nowrap;
+  transition: 0.3s;
+}
+nav a:hover { color: var(--yellow); }
+
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  color: var(--yellow);
+  cursor: pointer;
+}
+
+/* HERO SECTION */
+.page-title {
+  background: linear-gradient(rgba(11, 28, 45, 0.8),rgba(11, 28, 45, 0.8)), url("hero.png") center/cover;
+  padding: 100px 0;
+  text-align: center;
+}
+.page-title h1 { color: var(--yellow); font-size: 3rem; margin-bottom: 10px; }
+
+/* STATS BAR */
+.stats-bar {
+  background: var(--yellow);
+  color: var(--black);
+  padding: 40px 0;
+  text-align: center;
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+.stat-item h2 { font-size: 2.5rem; margin-bottom: 5px; }
+.stat-item p { font-weight: bold; text-transform: uppercase; font-size: 0.9rem; }
+
+/* MISSION & VISION SECTION */
+.mission-vision {
+  background: var(--accent-blue);
+  padding: 80px 0;
+}
+.mv-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+.mv-card {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 40px;
+  border-radius: 15px;
+  border: 1px solid rgba(212, 175, 55, 0.1);
+  transition: 0.3s;
+}
+.mv-card:hover { border-color: var(--yellow); background: rgba(255, 255, 255, 0.05); }
+.mv-card h3 { color: var(--yellow); font-size: 1.8rem; margin-bottom: 15px; }
+.mv-card p { color: #ccc; font-size: 1.05rem; }
+
+/* CONTENT SECTIONS */
+.section-padding { padding: 80px 0; }
+.section-title { color: var(--yellow); text-align: center; margin-bottom: 40px; font-size: 2rem; }
+
+/* PROJECTS GRID */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+.project-card {
+  background: var(--dark-grey);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+.project-card:hover { transform: translateY(-10px); }
+.project-img img { 
+  width: 100%; 
+  height: 220px; 
+  object-fit: cover;
+  display: block;
+}
+.project-info { padding: 20px; }
+.project-info h3 { color: var(--yellow); margin-bottom: 10px; }
+.project-tag { font-size: 0.8rem; background: rgba(212, 175, 55, 0.2); padding: 4px 10px; border-radius: 4px; color: var(--yellow); }
+
+/* REVIEWS */
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+.review-card {
+  background: rgba(255,255,255,0.05);
+  padding: 30px;
+  border-radius: 15px;
+  border-left: 5px solid var(--yellow);
+}
+.review-author { font-weight: bold; color: var(--yellow); margin-top: 10px; }
+
+/* FOOTER */
+footer {
+    background: #050d14;
+    color: #cbd5e0;
+    padding: 80px 0 20px;
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
+}
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+footer h3 {
+    color: var(--yellow);
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 10px;
+}
+footer h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background: var(--yellow);
+}
+.footer-links ul { list-style: none; }
+.footer-links li { margin-bottom: 12px; }
+.footer-links a:hover { color: var(--yellow); transform: translateX(5px); }
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    font-size: 0.85rem;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media(max-width:768px){
+  .menu-toggle { display: block; }
+  nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--navy);
+    padding: 20px 0;
+    border-bottom: 2px solid var(--yellow);
+    text-align: center;
+  }
+  nav.active { display: flex; }
+  nav a { margin: 15px 0; margin-left: 0; }
+  .mv-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; text-align: center; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <div class="logo"><img src="MasterPRO.png" alt="FixMaster Pro"></div>
+    <div class="menu-toggle" id="mobile-menu">&#9776;</div>
+    <nav id="nav-list">
+      <a href="index.html">Home</a>
+      <a href="index.html#services">Services</a>
+      <a href="About.html" style="color:var(--yellow)">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="index.html#forms">Request Worker</a>
+      <a href="https://wa.me/2347075149813">Call Us</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-title">
+  <div class="container">
+    <h1>Our Commitment to Quality</h1>
+    <p>Building Trust through Professionalism and Accountability.</p>
+  </div>
+</section>
+
+<section class="stats-bar">
+  <div class="container stats-grid">
+    <div class="stat-item"><h2>500+</h2><p>Jobs Completed</p></div>
+    <div class="stat-item"><h2>150+</h2><p>Verified Workers</p></div>
+    <div class="stat-item"><h2>98%</h2><p>Client Satisfaction</p></div>
+    <div class="stat-item"><h2>24/7</h2><p>Project Support</p></div>
+  </div>
+</section>
+
+<section class="section-padding">
+  <div class="container">
+    <div style="max-width:800px; margin:auto; text-align:center;">
+      <h2 class="section-title">The FixMaster Pro Advantage</h2>
+      <p style="font-size: 1.2rem; color: #ddd; margin-bottom: 30px;">
+        FixMaster Pro, a subsidiary of <strong>AQUADIVE NIGERIA LIMITED</strong>, was born out of a necessity to standardize technical labor in Nigeria. We don't just find you a worker; we provide a managed solution where we take responsibility for the outcome.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="mission-vision">
+  <div class="container">
+    <div class="mv-grid">
+      <div class="mv-card">
+        <h3>Our Mission</h3>
+        <p>To redefine the technical service landscape in Nigeria by providing highly skilled, vetted, and supervised professionals who deliver excellence with integrity and accountability.</p>
+      </div>
+      <div class="mv-card">
+        <h3>Our Vision</h3>
+        <p>To become the most trusted platform for specialized technical labor and structural solutions in West Africa, known for setting the gold standard in professionalism and safety.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-padding" style="background: #081420;">
+  <div class="container">
+    <h2 class="section-title" style="color: white; margin-bottom: 30px;">Recently Completed Jobs</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <div class="project-img"><img src="underwaterhulling.jpg" alt="Vessel Hull Maintenance"></div>
+        <div class="project-info">
+          <span class="project-tag">Marine & Welding</span>
+          <h3>Vessel Hull Maintenance</h3>
+          <p>Full underwater inspection and welding for a commercial vessel at the Lagos port.</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-img"><img src="solar.png" alt="solar installation"></div>
+        <div class="project-info">
+          <span class="project-tag">Smart Home</span>
+          <h3>Luxury Villa Solar/CCTV</h3>
+          <p>Complete off-grid solar installation and smart security integration for a 5-bedroom duplex.</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-img"><img src="inspection.png" alt="Project inspection"></div>
+        <div class="project-info">
+          <span class="project-tag">Construction</span>
+          <h3>Site Supervision & Masonry</h3>
+          <p>Oversaw the structural renovation and tiling of a commercial office complex.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-padding">
+  <div class="container">
+    <h2 class="section-title">What Our Clients Say</h2>
+    <div class="review-grid">
+      <div class="review-card">
+        <p>"I’ve struggled with artisans abandoning work mid-way. FixMaster Pro changed that. Their supervisor was on-site until the last tile was laid. Highly recommended!"</p>
+        <div class="review-author">— Engr. Chidi Ogbonaya</div>
+      </div>
+      <div class="review-card">
+        <p>"Professionalism at its peak. We needed urgent marine welding for our boat, and they sent a certified diver/welder within hours. Quality was top-notch."</p>
+        <div class="review-author">— Capt. Williams, Aquadive Partner</div>
+      </div>
+      <div class="review-card">
+        <p>"Their pricing is transparent. No hidden charges or 'extra material' excuses. I used them for my office AC and electrical maintenance."</p>
+        <div class="review-author">— Mrs. Funke Akin</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <h3>FixMaster Pro</h3>
+        <p>A premier technical labor firm in Nigeria, specializing in certified marine welding, structural renovation, and smart home technology.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Services</h3>
+        <ul>
+          <li><a href="#">Marine Maintenance</a></li>
+          <li><a href="#">Site Supervision</a></li>
+          <li><a href="#">Solar Installation</a></li>
+          <li><a href="#">Structural Masonry</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h3>Support</h3>
+        <ul>
+          <li><a href="About.html">Our Story</a></li>
+          <li><a href="#">Request a Pro</a></li>
+          <li><a href="https://wa.me/2347075149813">WhatsApp Help</a></li>
+        </ul>
+      </div>
+      <div class="contact-info">
+        <h3>Get in Touch</h3>
+        <p>📍 Lagos & Port Harcourt</p>
+        <p>📞 0707 514 9813</p>
+        <p>📧 info@fixmasterpro.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 FixMaster Pro. A subsidiary of <strong>AQUADIVE NIGERIA LIMITED</strong>.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const menuToggle = document.getElementById('mobile-menu');
+  const navList = document.getElementById('nav-list');
+  menuToggle.addEventListener('click', () => { navList.classList.toggle('active'); });
+  document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', () => { navList.classList.remove('active'); });
+  });
+</script>
+
+</body>
+</html>

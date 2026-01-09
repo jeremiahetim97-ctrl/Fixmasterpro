@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FixMaster Pro | Project Gallery</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root{
+  --navy:#0b1c2d;
+  --black:#000;
+  --yellow:#d4af37;
+  --light:#f5f5f5;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--navy);
+  color:var(--light);
+  line-height:1.6;
+}
+.container{width:90%;max-width:1200px;margin:auto}
+a{text-decoration:none;color:inherit}
+
+/* ===== HEADER (UNCHANGED) ===== */
+header{
+  background:var(--navy);
+  padding:15px 0;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+header .container{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.logo{
+  margin-left:30px;
+}
+.logo img{
+  height:100px;
+  margin-left:-70px;
+  filter:drop-shadow(0 0 12px rgba(216,214,208,.4));
+  transition:.3s;
+}
+.logo img:hover{
+  transform:scale(1.2);
+}
+nav a{
+  margin-left:30px;
+  font-weight:bold;
+}
+nav a:hover{color:var(--yellow)}
+.menu-toggle{
+  display:none;
+  font-size:24px;
+  color:var(--yellow);
+  cursor:pointer;
+}
+
+/* ===== GALLERY ===== */
+.gallery{
+  padding:90px 0;
+}
+.gallery h1{
+  text-align:center;
+  color:var(--yellow);
+  margin-bottom:15px;
+}
+.gallery p{
+  text-align:center;
+  max-width:750px;
+  margin:0 auto 45px;
+  opacity:.9;
+}
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+}
+.gallery-item{
+  position:relative;
+  border-radius:8px;
+  overflow:hidden;
+}
+.gallery-item img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.4s ease;
+}
+.gallery-item:hover img{
+  transform:scale(1.08);
+}
+.gallery-caption{
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  background:rgba(0,0,0,.7);
+  padding:12px;
+  text-align:center;
+  font-size:14px;
+  color:var(--yellow);
+}
+
+/* ===== FOOTER (UNCHANGED STYLE) ===== */
+footer{
+  background:#050d14;
+  color:#cbd5e0;
+  padding:80px 0 20px;
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr 1.5fr;
+  gap:40px;
+}
+footer h3{
+  color:var(--yellow);
+  margin-bottom:25px;
+}
+.footer-links ul{list-style:none}
+.footer-links li{margin-bottom:12px}
+.footer-links a:hover{
+  color:var(--yellow);
+  transform:translateX(5px);
+}
+.contact-info p{
+  margin-bottom:12px;
+}
+.footer-bottom{
+  text-align:center;
+  padding-top:30px;
+  border-top:1px solid rgba(255,255,255,0.05);
+  font-size:.85rem;
+  color:#718096;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  nav{
+    display:none;
+    position:absolute;
+    top:65px;
+    right:0;
+    width:100%;
+    background:var(--navy);
+    text-align:center;
+  }
+  nav a{
+    display:block;
+    padding:12px;
+    border-top:1px solid #333;
+  }
+  nav.show{display:block}
+  .menu-toggle{display:block}
+  .logo img{height:80px}
+}
+/* GALLERY */
+.section-padding{padding:80px 0}
+.section-title{
+  color:var(--yellow);
+  text-align:center;
+  margin-bottom:40px;
+  font-size:2rem;
+}
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:20px;
+}
+.gallery-item{
+  overflow:hidden;
+  border-radius:10px;
+  cursor:pointer;
+}
+.gallery-item img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  transition:.4s;
+}
+.gallery-item:hover img{transform:scale(1.1)}
+
+/* LIGHTBOX */
+.lightbox{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.9);
+  align-items:center;
+  justify-content:center;
+  z-index:2000;
+}
+.lightbox img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:10px;
+}
+.lightbox.active{display:flex}
+
+/* MOBILE */
+@media(max-width:768px){
+  .menu-toggle{display:block}
+  nav{
+    display:none;
+    flex-direction:column;
+    position:absolute;
+    top:100%;
+    left:0;
+    width:100%;
+    background:var(--navy);
+    text-align:center;
+    padding:20px 0;
+  }
+  nav.active{display:flex}
+  nav a{margin:15px 0}
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<header>
+  <div class="container">
+    <div class="logo">
+      <img src="MasterPRO.png" alt="FixMaster Pro Logo">
+    </div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <nav id="nav">
+      <a href="index.html">Home</a>
+      <a href="index.html#services">Services</a>
+      <a href="About.html">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="index.html#forms">Request Worker</a>
+      <a href="https://wa.me/2347075149813">Call Us</a>
+    </nav>
+  </div>
+</header>
+
+<section class="section-padding">
+  <div class="container">
+    <h2 class="section-title">Completed Projects</h2>
+
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="underwaterhulling.jpg"></div>
+      <div class="gallery-item"><img src="solar.png"></div>
+      <div class="gallery-item"><img src="inspection.png"></div>
+      <div class="gallery-item"><img src="Technician-installing-CCTV-Camera.webp"></div>
+      <div class="gallery-item"><img src="fixmasterimage (1).jpeg"></div>
+      <div class="gallery-item"><img src="fixmasterimage (2).jpeg"></div>
+      <div class="gallery-item"><img src="fixmasterimage (3).jpeg"></div>
+      <div class="gallery-item"><img src="fixmasterimage (4).jpeg"></div>
+      <div class="gallery-item"><img src="fixmasterimage (6).jpeg"></div>
+      <div class="gallery-item"><img src="fixmasterimage (8).jpeg"></div>
+      <div class="gallery-item"><img src="fixmasterimage (7).jpeg"></div>
+    </div>
+  </div>
+</section>
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+
+      <div class="footer-about">
+        <h3>FixMaster Pro</h3>
+        <p>
+          A premier technical labor firm in Nigeria, specializing in certified marine welding,
+          structural renovation, and smart home technology.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <h3>Services</h3>
+        <ul>
+          <li><a href="index.html#services">Marine Maintenance</a></li>
+          <li><a href="index.html#services">Site Supervision</a></li>
+          <li><a href="index.html#services">Solar Installation</a></li>
+          <li><a href="index.html#services">Structural Masonry</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h3>Support</h3>
+        <ul>
+          <li><a href="About.html">Our Story</a></li>
+          <li><a href="index.html#forms">Request a Pro</a></li>
+          <li><a href="https://wa.me/2347075149813">WhatsApp Help</a></li>
+        </ul>
+      </div>
+
+      <div class="contact-info">
+        <h3>Get in Touch</h3>
+        <p>📍 Lagos & Port Harcourt, Nigeria</p>
+        <p>📞 0707 514 9813</p>
+        <p>📧 info@fixmasterpro.com</p>
+        <p>⏰ 24/7 Project Monitoring</p>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 FixMaster Pro. A subsidiary of <strong>AQUADIVE NIGERIA LIMITED</strong>.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){
+  document.getElementById("nav").classList.toggle("show");
+}
+</script>
+
+</body>
+</html>

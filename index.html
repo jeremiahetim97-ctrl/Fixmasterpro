@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FixMaster Pro | Reliable Skilled Workers</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root{
+  --navy:#0b1c2d;
+  --black:#000;
+  --yellow:#d4af37;
+  --light:#f5f5f5;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--navy);
+  color:var(--light);
+  line-height:1.6;
+}
+.container{width:90%;max-width:1200px;margin:auto}
+a{text-decoration:none;color:inherit}
+
+/* HEADER */
+header{
+  background:var(--navy);
+  padding:15px 0;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+header .container{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+/* LOGO */
+.logo{
+  display:relative;
+  align-items:center;
+  margin-left:30px; 
+}
+.logo img{
+  height:100px;
+  width:auto;
+  object-fit:contain;
+  margin-left:-70px;
+  filter:drop-shadow(0 0 12px rgba(216, 214, 208, 0.4));
+  transition:.3s;
+}
+.logo img:hover{
+  transform:scale(1.63);
+  filter:drop-shadow(0 0 40px rgba(226, 222, 208, 0.7));
+}
+
+nav a{
+  margin-left:30px;
+  color:#fff;
+  font-weight:bold;
+}
+nav a:hover{color:var(--yellow)}
+.menu-toggle{display:none;font-size:24px;color:yellow;cursor:pointer}
+
+/* HERO */
+.hero{
+  background:linear-gradient(rgba(0, 0, 0, 0.85),rgba(0,0,0,.85)),
+  url("hero.png") center/cover;
+  padding:90px 0;
+  text-align:center; 
+}
+.hero h1{color:var(--yellow);font-size:42px;margin-bottom:15px}
+.hero p{max-width:780px;margin:auto;margin-bottom:25px}
+.btn{
+  display:inline-block;
+  padding:14px 28px;
+  margin:8px;
+  border-radius:5px;
+  font-weight:bold;
+}
+.btn-primary{background:var(--yellow);color:var(--black)}
+.btn-outline{border:2px solid var(--yellow);color:var(--yellow)}
+.btn:hover{opacity:.9}
+
+/* SERVICES */
+.services{
+  background:var(--navy);
+  padding:65px 0;
+}
+.services h2{
+  text-align:center;
+  color:var(--yellow);
+  margin-bottom:25px;
+}
+.services ul{
+  max-width:950px;
+  margin:auto;
+  list-style:none;
+}
+.services li{
+  padding:14px 0;
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+/* BUSINESS WRITE-UP */
+.about{
+  padding:75px 0;
+}
+.about h2{
+  text-align:center;
+  color:var(--yellow);
+  margin-bottom:25px;
+}
+.about p{
+  max-width:980px;
+  margin:18px auto;
+  font-size:16px;
+}
+
+/* FORMS */
+.forms{
+  background:var(--navy);
+  padding:65px 0;
+}
+.forms h2{
+  text-align:center;
+  color:var(--yellow);
+  margin-bottom:20px;
+}
+.form-box{
+  max-width:500px;
+  margin:25px auto;
+}
+input{
+  width:100%;
+  padding:12px;
+  margin:10px 0;
+  border:none;
+  border-radius:5px;
+}
+button{
+  width:100%;
+  padding:14px;
+  background:var(--yellow);
+  border:none;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* WHATSAPP BAR */
+.whatsapp-bar{
+  background:var(--yellow);
+  color:var(--black);
+  text-align:center;
+  padding:5px;
+  font-weight:bold;
+}
+
+/* FOOTER */
+footer{
+  background:var(--navy);
+  padding:10px 0;
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:10px;
+}
+footer h3{color:var(--yellow);margin-bottom:10px}
+footer p,footer a{font-size:14px}
+.footer-icons a{display:block;margin:6px 0}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  nav{display:none;position:absolute;top:65px;right:0;background:var(--navy);width:100%;text-align:center}
+  nav a{display:block;padding:12px;border-top:1px solid #333}
+  nav.show{display:block}
+  .menu-toggle{display:block}
+  .hero h1{font-size:30px}
+  .logo img{height:80px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <div class="logo">
+      <img src="MasterPRO.png" alt="FixMaster Pro Logo">
+    </div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <nav id="nav">
+      <a href="index.html">Home</a>
+      <a href="#services">Services</a>
+      <a href="About.html">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="#forms">Request Worker</a>
+      <a href="https://wa.me/2347075149813">Call Us</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>Reliable Skilled Workers for Homes, Offices, Construction & Marine Projects</h1>
+    <p>Verified artisans, contractors and technical experts — professionally managed for quality, safety and accountability.</p>
+    <a href="#request" class="btn btn-primary">Request a Worker</a>
+    <a href="#partner" class="btn btn-outline">Partner With Us</a>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="container">
+    <h2>Our Service Areas</h2>
+    <ul>
+      <li>Home & Office Electrical, Plumbing, AC, Painting & Repairs</li>
+      <li>Building Construction, Renovation & Site Supervision</li>
+      <li>Marine & Vessel Maintenance, Diving & Welding Services</li>
+      <li>Industrial & Offshore Technical Support</li>
+      <li>Website Design, CCTV, Solar & Smart Automation</li>
+      <li>Facility & Property Maintenance Solutions</li>
+    </ul>
+  </div>
+</section>
+
+<section class="about">
+  <div class="container">
+    <h2>Why FixMaster Pro</h2>
+    <p>
+      FixMaster Pro is a structured skilled-services platform under <strong>Aquadive Nigeria Limited</strong>, built to eliminate unreliable artisans, job abandonment, and poor workmanship across Nigeria.
+    </p>
+    <p>
+      Every professional on our platform is vetted, verified, and managed. We don’t just connect you — we supervise jobs, ensure pricing transparency, and follow up until completion.
+    </p>
+    <p>
+      From homes and offices to construction sites, marine vessels, and industrial facilities, FixMaster Pro delivers dependable technical solutions with accountability, safety, and professionalism at the core.
+    </p>
+  </div>
+</section>
+
+<section class="forms" id="forms">
+  <div class="container">
+
+    <h2 id="request">Request a Worker</h2>
+    <div class="form-box">
+      <input id="r_phone" placeholder="Email/Phone Number">
+      <input id="r_city" placeholder="City">
+      <input id="r_state" placeholder="State">
+      <input id="r_email" placeholder="Type of project">
+      <button onclick="sendWhatsApp('request')">Submit to WhatsApp</button>
+    </div>
+
+    <h2 id="partner">Partner With Us</h2>
+    <div class="form-box">
+      <input id="p_phone" placeholder="Phone Number">
+      <input id="p_city" placeholder="City">
+      <input id="p_state" placeholder="State">
+      <input id="p_email" placeholder="Email">
+      <button onclick="sendWhatsApp('partner')">Submit to WhatsApp</button>
+    </div>
+
+  </div>
+</section>
+
+<section class="whatsapp-bar">
+  <a href="https://wa.me/2347075149813">
+     Call Us on WhatsApp: 0707 514 9813
+  </a>
+</section>
+
+<style>
+/* --- ADVANCED FOOTER STYLES --- */
+footer {
+    background: #050d14; /* Deep blend with your navy background */
+    color: #cbd5e0;
+    padding: 80px 0 20px;
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr; /* Diverse column widths */
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+footer h3 {
+    color: var(--yellow);
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+/* Gold underline under headings */
+footer h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background: var(--yellow);
+}
+
+.footer-about p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+    color: var(--yellow);
+    transform: translateX(5px); /* Subtle slide effect */
+}
+
+.contact-info p {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    font-size: 0.85rem;
+    color: #718096;
+}
+
+/* Mobile responsive footer */
+@media(max-width: 992px) {
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 600px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    footer h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .footer-links a {
+        justify-content: center;
+    }
+}
+</style>
+
+<style>
+/* --- ADVANCED FOOTER STYLES --- */
+footer {
+    background: #050d14; /* Deep blend with your navy background */
+    color: #cbd5e0;
+    padding: 80px 0 20px;
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr; /* Diverse column widths */
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+footer h3 {
+    color: var(--yellow);
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+/* Gold underline under headings */
+footer h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background: var(--yellow);
+}
+
+.footer-about p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+    color: var(--yellow);
+    transform: translateX(5px); /* Subtle slide effect */
+}
+
+.contact-info p {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    font-size: 0.85rem;
+    color: #718096;
+}
+
+/* Mobile responsive footer */
+@media(max-width: 992px) {
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 600px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    footer h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .footer-links a {
+        justify-content: center;
+    }
+}
+</style>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      
+      <div class="footer-about">
+        <h3>FixMaster Pro</h3>
+        <p>A premier technical labor firm in Nigeria, specializing in certified marine welding, structural renovation, and smart home technology. We bridge the gap between skilled labor and quality-conscious clients.</p>
+      </div>
+
+      <div class="footer-links">
+        <h3>Services</h3>
+        <ul>
+          <li><a href="index.html#services">Marine Maintenance</a></li>
+          <li><a href="index.html#services">Site Supervision</a></li>
+          <li><a href="index.html#services">Solar Installation</a></li>
+          <li><a href="index.html#services">Structural Masonry</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h3>Support</h3>
+        <ul>
+            <li><a href="About.html">Our Story</a></li>
+          <li><a href="index.html#forms">Request a Pro</a></li>
+          <li><a href="https://wa.me/2347075149813">WhatsApp Help</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="contact-info">
+        <h3>Get in Touch</h3>
+        <p><strong>📍 Office:</strong> Lagos & Port Harcourt, Nigeria</p>
+        <p><strong>📞 Phone:</strong> 0707 514 9813</p>
+        <p><strong>📧 Email:</strong> info@fixmasterpro.com</p>
+        <p><strong>⏰ Hours:</strong> 24/7 Project Monitoring</p>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 FixMaster Pro. A subsidiary of <strong>AQUADIVE NIGERIA LIMITED</strong>. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){
+  document.getElementById("nav").classList.toggle("show");
+}
+
+function sendWhatsApp(type){
+  let phone = type==="request"?r_phone.value:p_phone.value;
+  let city  = type==="request"?r_city.value:p_city.value;
+  let state = type==="request"?r_state.value:p_state.value;
+  let email = type==="request"?r_email.value:p_email.value;
+
+  let msg = `${type==="request"?"Request Worker":"Partner With Us"}%0A
+Phone: ${phone}%0ACity: ${city}%0AState: ${state}%0AEmail: ${email}`;
+
+  window.open("https://wa.me/2347075149813?text="+msg,"_blank");
+}
+</script>
+
+</body>
+</html>
